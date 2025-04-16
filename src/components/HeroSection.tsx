@@ -7,7 +7,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
-
+  const baseRoute = process.env.NODE_ENV === "production" ? "/douglasCurriculum" : "";
   useEffect(() => {
     // Only render ASCII art on desktop screens
     if (!isMobile) {
@@ -46,7 +46,7 @@ const HeroSection = () => {
       )}
 
       <div
-        id="about" 
+        id="about"
         className="container relative z-10 mx-auto flex items-center justify-center"
       >
         <div className="px-4 py-10 md:py-20 w-full">
@@ -73,13 +73,13 @@ const HeroSection = () => {
                 Estou sempre em busca de novos desafios e oportunidades para
                 aprimorar minhas habilidades e contribuir para o sucesso de
                 projetos inovadores. Sendo assim estou aberto a novas
-                oportunidades de trabalho para conseguir me ingresar em uma
-                faculdede de Engenharia da computação e seguir em estudo na
-                area de computação quântica.
+                oportunidades de trabalho para conseguir me ingressar em
+                uma faculdade de Engenharia de software e seguir em estudo na
+                área de computação quântica.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href={`${baseRoute}/resume.pdf`} target="_blank" rel="noopener noreferrer" download>
                   <Button className="bg-resume-cyan hover:bg-resume-cyan/80 text-black">
                     <Download size={18} className="mr-2" /> Download CV
                   </Button>

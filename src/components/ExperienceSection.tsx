@@ -7,7 +7,7 @@ const experiences = [
     title: "Estagiário Dev",
     company: "Devena Tecnologia e Inovação",
     location: "Vitória - ES",
-    period: "Jan 2024 - Presente",
+    period: "Jan 2024 - Mar 2024",
     description: "Responsável por integrar relatórios criados em JasperSoft Studio, usando SQL para consultas e Java para manipulação de dados. Também encarregado de desenvolver regras de customização de CRM para empresas, utilizando JavaScript e TypeScript."
   },
   {

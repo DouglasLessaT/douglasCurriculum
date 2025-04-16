@@ -33,7 +33,7 @@ const certifications = [
   {
     name: "Cyber Threat Management",
     issuer: "Cisco",
-    year: "2023",
+    year: "2025",
     type: "certification"
   },
   {
