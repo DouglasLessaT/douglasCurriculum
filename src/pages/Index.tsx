@@ -1,12 +1,11 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-// import Projects from "@/components/Projects";
+import Projects from "@/components/Projects";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 import Footer from "@/components/Footer";
-
 
 const Index = () => {
   useEffect(() => {
@@ -54,7 +53,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        {/* <Projects /> */}
+        <Projects />
         <SkillsSection />
         <ExperienceSection />
         <EducationSection />
