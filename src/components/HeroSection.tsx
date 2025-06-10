@@ -4,17 +4,14 @@ import { renderDonut } from './ui/AsciiArt';
 import { Button } from "@/components/ui/button";
 import { Download, Linkedin, Github } from "lucide-react";
 import { useIsMobile } from '@/hooks/use-mobile';
+import douglasImg from '../assets/douglas-lessat.jpg';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
   const baseRoute = process.env.NODE_ENV === "production" ? "/douglasCurriculum" : "";
   useEffect(() => {
-    // Only render ASCII art on desktop screens
     if (!isMobile) {
-      // Renderizar o Donut no contêiner esquerdo
       renderDonut('ascii-art-left');
-
-      // Renderizar o Donut no contêiner direito
       renderDonut('ascii-art-right');
     }
   }, [isMobile]);
@@ -111,11 +108,11 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-0">
+            <div className="w-full md:w-1/2 flex justify-center order-1 md:order-2 mb-8 md:mb-12 mt-10">
               <div className="relative">
                 <div className="w-100 h-100 md:w-82 md:h-82 lg:w-100 lg:h-100 rounded-full overflow-hidden border-4 border-resume-cyan p-1">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQHwy6IpvmrTog/profile-displayphoto-shrink_800_800/B4DZRIh5hzHMAc-/0/1736383634942?e=1749081600&v=beta&t=qmL8X-SU68tWLR50ZH0F9ab4MUj_bob4UUGzVNLxKgY"
+                    src={douglasImg}
                     alt="Douglas Lessat"
                     className="w-full h-full object-cover rounded-full"
                   />

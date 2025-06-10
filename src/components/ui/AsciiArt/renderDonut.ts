@@ -6,20 +6,20 @@ export function renderDonut(containerId: string): void {
     return;
   }
 
-  let A = 0; // Rotation angle A
-  let B = 0; // Rotation angle B
+  let A = 0;
+  let B = 0;
   const K2 = 5;
-  const K3 = 200; // Grid size
-  const K4 = 60;  // Scaling factor
+  const K3 = 200;
+  const K4 = 60;  
   const R1 = 1.5;
   const R2 = 2.5;
 
   const luminanceChars = '.,-~:;=!*#$@';
 
-  // Dynamically generate seed positions based on K3
+
   function generateSeedPositions(): number[] {
     const seeds: number[] = [];
-    const seedCount = 20; // Number of seeds
+    const seedCount = 20; 
     const seedSpacing = Math.floor(K3 * K3 / seedCount);
 
     for (let i = 0; i < seedCount; i++) {
@@ -32,7 +32,6 @@ export function renderDonut(containerId: string): void {
   const predefinedSeeds = generateSeedPositions();
   let seedPositions: number[] = [];
 
-  // Initialize seeds based on totalPurchases
   function initializeSeeds(total: number): void {
     const maxSeeds = predefinedSeeds.length;
     const seedsToColor = Math.min(total, maxSeeds);
@@ -40,7 +39,6 @@ export function renderDonut(containerId: string): void {
     console.log('Initialized Seeds:', seedPositions);
   }
 
-  // Wait until window.totalPurchases is defined
   function waitForTotalPurchases(callback: () => void): void {
     if (typeof (window as any).totalPurchases !== 'undefined') {
       callback();
@@ -55,7 +53,6 @@ export function renderDonut(containerId: string): void {
   });
 
   function renderFrame(): void {
-    // Initialize screen buffer and z-buffer
     const screen: string[] = Array(K3 * K3).fill(' ');
     const zBuffer: number[] = Array(K3 * K3).fill(0);
 
@@ -66,26 +63,21 @@ export function renderDonut(containerId: string): void {
         const cosPhi = Math.cos(phi);
         const sinPhi = Math.sin(phi);
 
-        // Torus parametric equations
         const circleX = R2 + R1 * cosTheta;
         const circleY = R1 * sinTheta;
 
-        // 3D coordinates after rotation
         const x = circleX * (Math.cos(B) * cosPhi + Math.sin(A) * Math.sin(B) * sinPhi) - circleY * Math.cos(A) * Math.sin(B);
         const y = circleX * (Math.sin(B) * cosPhi - Math.sin(A) * Math.cos(B) * sinPhi) + circleY * Math.cos(A) * Math.cos(B);
         const z = K2 + Math.cos(A) * circleX * sinPhi + circleY * Math.sin(A);
 
-        // Projection
-        const ooz = 1 / z; // "One over z"
+        const ooz = 1 / z; 
         const xp = Math.floor(K3 / 2 + K4 * ooz * x);
         const yp = Math.floor(K3 / 2 - K4 * ooz * y);
 
-        // Boundary checks
         if (xp < 0 || xp >= K3 || yp < 0 || yp >= K3) continue;
 
         const idx = xp + yp * K3;
 
-        // Calculate luminance
         const L = cosPhi * cosTheta * Math.sin(B) - Math.cos(A) * cosTheta * sinPhi -
                   Math.sin(A) * sinTheta + Math.cos(B) * (Math.cos(A) * sinTheta - cosTheta * Math.sin(A) * sinPhi);
 
@@ -95,7 +87,6 @@ export function renderDonut(containerId: string): void {
           const clampedLuminance = Math.max(0, Math.min(luminance, luminanceChars.length - 1));
           const char = luminanceChars[clampedLuminance];
 
-          // Check if this position is a seed to be colored
           if (seedPositions.includes(idx)) {
             screen[idx] = `<span class="seed">${char}</span>`;
           } else {
@@ -105,15 +96,14 @@ export function renderDonut(containerId: string): void {
       }
     }
 
-    // Build output string with line breaks
     asciiContainer.innerHTML = screen.reduce((acc, char, i) => {
       acc += char;
       if ((i + 1) % K3 === 0) acc += '<br>';
       return acc;
     }, '');
 
-    A += 0.04; // Rotation speed A
-    B += 0.04; // Rotation speed B
+    A += 0.04; 
+    B += 0.04; 
     requestAnimationFrame(renderFrame);
   }
 

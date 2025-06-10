@@ -6,11 +6,11 @@ export function renderStrawberry(): void {
       return;
     }
   
-    let A = 0; // Rotation angle A
-    let B = 190; // Rotation angle B
+    let A = 0; 
+    let B = 190; 
     const K2 = 6;
-    const K3 = 260; // Grid size
-    const K4 = 260; // Scaling factor
+    const K3 = 260; 
+    const K4 = 260; 
   
     const luminanceChars = '.,-~:;=!*#$@';
   
