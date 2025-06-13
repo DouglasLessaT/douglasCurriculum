@@ -7,14 +7,21 @@ const experiences = [
     title: "Estagiário Dev",
     company: "Devena Tecnologia e Inovação",
     location: "Vitória - ES",
-    period: "Jan 2024 - Mar 2024",
+    period: "Set 2024 - Mar 2025",
     description: "Responsável por integrar relatórios criados em JasperSoft Studio, usando SQL para consultas e Java para manipulação de dados. Também encarregado de desenvolver regras de customização de CRM para empresas, utilizando JavaScript e TypeScript."
+  },
+    {
+    title: "Suporte ao Cliente N1",
+    company: "Genesis Tecnologia",
+    location: "Rio Marino, Vila Velha - ES",
+    period: "Abril 2019 - Set 2024",
+    description: "Atuei como suporte ao cliente de primeiro nível, fornecendo assistência em software de gestão clinica. "
   },
   {
     title: "Suporte TI",
     company: "Dalta Industria e comercio de madeiras LTDA",
     location: "Rio Marino, Vila Velha - ES",
-    period: "Junho 2019 - 2023",
+    period: "Junho 2019 - Mar 2024",
     description: "Na Dalta Madeiras, desempenhei papel fundamental na facilitação da integração (JAVA e C#) entre software de inspeção ambiental (DOF/IBAMA) e os sistemas ERP e CRM da empresa. Além disso, gerenciei e desenvolvi regras de negócio para os sistemas da empresa, fui responsável pela infraestrutura de rede, e criei relatórios relacionados à conformidade com RIPD e LGPD."
   }
 ];
