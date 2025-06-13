@@ -5,38 +5,48 @@ import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+    //   {
+    //   title: "Mobile Banking App",
+    //   description: "Aplicativo móvel de banking com autenticação biométrica e transferências instantâneas.",
+    //   technologies: [, "Firebase", "Spring Boot", "JWT"],
+    //   githubUrl: "https://github.com/DouglasLessaT",
+    //   liveUrl: "#",
+    //   image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
+    // },
     {
-      title: "E-commerce Platform",
-      description: "Plataforma completa de e-commerce com carrinho de compras, pagamentos e gestão de produtos.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      githubUrl: "https://github.com/DouglasLessaT",
-      liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop"
-    },
-    {
-      title: "Task Management App",
-      description: "Aplicativo de gerenciamento de tarefas com drag-and-drop e colaboração em tempo real.",
-      technologies: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
-      githubUrl: "https://github.com/DouglasLessaT",
+      title: "GTCC - Gerenciador Apresentações de TCC",
+      description: "Api de gerenciamento de apresentacoes ",
+      technologies: ["Vue.js","Spring Boot", "MySQL"],
+      githubUrl: "https://github.com/DouglasLessaT/GTCCBackEnd",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop"
-    },
+    },    
     {
-      title: "Data Analytics Dashboard",
-      description: "Dashboard interativo para análise de dados com gráficos e relatórios personalizáveis.",
-      technologies: ["Python", "Flask", "D3.js", "MySQL"],
-      githubUrl: "https://github.com/DouglasLessaT",
+      title: "Surface Analytics Tool",
+      description: "Ferramenta de análise de superfície, que coleta e analisa dados de sites para PenTesting.",
+      technologies: ["Python", "Selenium", "Scrapy", "wappalyzer"],
+      githubUrl: "https://github.com/DouglasLessaT/surface_analysis_tool",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop"
     },
     {
-      title: "Mobile Banking App",
-      description: "Aplicativo móvel de banking com autenticação biométrica e transferências instantâneas.",
-      technologies: ["React Native", "Firebase", "Node.js", "JWT"],
-      githubUrl: "https://github.com/DouglasLessaT",
+      title: "EmergencyQueue {Em desenvovolvimento}",
+      description: "Api de gerenciamento de filas de espera para atendimentos médicos de emergência.",
+      technologies: ["Spring Boot","JWT", "PostgreSQL", "Golang"],
+      githubUrl: "https://github.com/DouglasLessaT/MVPEmergencyQueue",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
-    }
+    },
+        {
+      title: "Demo Kafka e Docker",
+      description: "Api de filas de mensagems com Kafka e Docker",
+      technologies: ["Spring Boot","Typescript", "PostgreSQL"],
+      githubUrl: "https://github.com/DouglasLessaT/KafkaDemo",
+      liveUrl: "#",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
+    },
+    
+    
   ];
 
   return (
@@ -93,7 +103,7 @@ const Projects = () => {
                       Código
                     </a>
                   </Button>
-                  <Button 
+                  {/* <Button 
                     size="sm" 
                     className="flex-1 bg-resume-cyan hover:bg-resume-cyan/90 text-resume-dark"
                     asChild
@@ -102,7 +112,7 @@ const Projects = () => {
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Demo
                     </a>
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>

@@ -72,7 +72,7 @@ const HeroSection = () => {
                 projetos inovadores. Sendo assim estou aberto a novas
                 oportunidades de trabalho para conseguir me ingressar em
                 uma faculdade de Engenharia de software e seguir em estudo na
-                área de computação quântica.
+                área CyberSecurity.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
