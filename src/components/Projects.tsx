@@ -35,7 +35,7 @@ const Projects = () => {
       technologies: ["Spring Boot","JWT", "PostgreSQL", "Golang"],
       githubUrl: "https://github.com/DouglasLessaT/MVPEmergencyQueue",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=250&fit=crop"
+      image: "https://assets.intersystems.com/dims4/default/e09c0f4/2147483647/strip/true/crop/759x641+0+0/resize/759x641!/quality/90/?url=http%3A%2F%2Finter-systems-brightspot.s3.amazonaws.com%2Fd2%2F81%2F63fa4ef546068d9d323eb867c422%2Fscreenshot-36.png"
     },
         {
       title: "Demo Kafka e Docker",
