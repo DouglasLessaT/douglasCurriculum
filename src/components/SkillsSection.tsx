@@ -1,16 +1,25 @@
 
 import { Card } from "@/components/ui/card";
+import RadarGraph from "@/components/ui/radar-graph";
 
 const HardSkills = [
-  { name: "Java", level: 70 },
-  { name: "SQL", level: 90 },
-  { name: "JavaScript", level: 75 },
-  { name: "TypeScript", level: 60 },
-  { name: "C#", level: 65 },
-  { name: "JasperSoft", level: 75 },
-  { name: "Linux", level: 80 },
-  { name: "Clound", level: 50 },
-  { name: "Network Infrastructure", level: 70 },
+  { name: "Java", level: 70, type: "Programming Language" },
+  { name: "C#", level: 65 , type: "Programming Language" },
+  { name: "JavaScript", level: 75 ,type: "Programming Language" },
+  { name: "TypeScript", level: 60 , type: "Programming Language" },
+  { name: "JasperSoft", level: 75, type: "Reporting Tool" },
+  { name: "Linux", level: 80 , type: "Operating System" },
+  { name: "SQL", level: 80, type: "Database" },
+  { name: "NoSQL", level: 45, type: "Database" },
+  { name: "Clound", level: 50 , type: "Cloud Computing" },
+  { name: "Network Infrastructure", level: 70, type: "Networking" },
+  { name: "PostgreSQL", level: 70, type: "Database" },
+  { name: "MongoDB", level: 50, type: "Database" },
+  { name: "Git", level: 75, type: "Version Control" },
+  { name: "Docker", level: 60, type: "Containerization" },
+  { name: "Agile Methodologies", level: 70, type: "Project Management" },
+  { name: "RESTful APIs", level: 65, type: "Web Services" },
+  { name: "GraphQL", level: 50, type: "Web Services" }
 ];
 
 const SoftSkills = [
@@ -34,7 +43,7 @@ const SkillsSection = () => {
           <div className="space-y-6 animate-slide-up">
             <h3 className="text-2xl font-semibold text-white mb-6">Hard Skills</h3>
             <div className="space-y-6">
-              {HardSkills.map((skill, index) => (
+              {/* {HardSkills.map((skill, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-white">{skill.name}</span>
@@ -47,7 +56,8 @@ const SkillsSection = () => {
                     ></div>
                   </div>
                 </div>
-              ))}
+              ))} */}
+              <RadarGraph skills={HardSkills} />
             </div>
           </div>
           

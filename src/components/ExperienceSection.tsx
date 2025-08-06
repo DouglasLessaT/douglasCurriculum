@@ -14,14 +14,14 @@ const experiences = [
     title: "Suporte ao Cliente N1",
     company: "Genesis Tecnologia",
     location: "Rio Marino, Vila Velha - ES",
-    period: "Abril 2019 - Set 2024",
+    period: "Jun 2024 - Set 2024",
     description: "Atuei como suporte ao cliente de primeiro nível, fornecendo assistência em software de gestão clinica. "
   },
   {
     title: "Suporte TI",
     company: "Dalta Industria e comercio de madeiras LTDA",
     location: "Rio Marino, Vila Velha - ES",
-    period: "Junho 2019 - Mar 2024",
+    period: "Jun 2019 - Mar 2024",
     description: "Na Dalta Madeiras, desempenhei papel fundamental na facilitação da integração (JAVA e C#) entre software de inspeção ambiental (DOF/IBAMA) e os sistemas ERP e CRM da empresa. Além disso, gerenciei e desenvolvi regras de negócio para os sistemas da empresa, fui responsável pela infraestrutura de rede, e criei relatórios relacionados à conformidade com RIPD e LGPD."
   }
 ];
