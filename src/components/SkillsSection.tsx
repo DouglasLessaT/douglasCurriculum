@@ -4,20 +4,19 @@ import RadarGraph from "@/components/ui/radar-graph";
 
 const HardSkills = [
   { name: "Java", level: 70, type: "Programming Language" },
-  { name: "C#", level: 65 , type: "Programming Language" },
+  { name: "C++", level: 65 , type: "Programming Language" },
   { name: "JavaScript", level: 75 ,type: "Programming Language" },
   { name: "TypeScript", level: 60 , type: "Programming Language" },
   { name: "JasperSoft", level: 75, type: "Reporting Tool" },
-  { name: "Linux", level: 80 , type: "Operating System" },
+  { name: "Linux", level: 60 , type: "Operating System" },
   { name: "SQL", level: 80, type: "Database" },
   { name: "NoSQL", level: 45, type: "Database" },
-  { name: "Clound", level: 50 , type: "Cloud Computing" },
-  { name: "Network Infrastructure", level: 70, type: "Networking" },
   { name: "PostgreSQL", level: 70, type: "Database" },
   { name: "MongoDB", level: 50, type: "Database" },
+  { name: "Clound", level: 50 , type: "Cloud Computing" },
+  { name: "Network Infrastructure", level: 50, type: "Networking" },
   { name: "Git", level: 75, type: "Version Control" },
   { name: "Docker", level: 60, type: "Containerization" },
-  { name: "Agile Methodologies", level: 70, type: "Project Management" },
   { name: "RESTful APIs", level: 65, type: "Web Services" },
   { name: "GraphQL", level: 50, type: "Web Services" }
 ];
@@ -30,7 +29,7 @@ const SoftSkills = [
   "Proatividade",
   "Gerenciamento de Tempo",
   "Pensamento Crítico",
-  "Atenção aos Detalhes"
+  "Analise",
 ];
 
 const SkillsSection = () => {
