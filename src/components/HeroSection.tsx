@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { renderDonut } from './ui/AsciiArt';
 import { Button } from "@/components/ui/button";
-import { Download, Linkedin, Github } from "lucide-react";
+import { Download, Linkedin, Github} from "lucide-react";
 import { useIsMobile } from '@/hooks/use-mobile';
 import douglasImg from '../assets/douglas-lessat.jpg';
 
@@ -103,6 +103,18 @@ const HeroSection = () => {
                     className="border-resume-cyan text-resume-cyan hover:bg-resume-cyan/10"
                   >
                     <Github size={18} className="mr-2" /> GitHub
+                  </Button>
+                </a>
+                <a
+                  href="https://www.hackerrank.com/profile/douglaslessat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="border-resume-cyan text-resume-cyan hover:bg-resume-cyan/10"
+                  >
+                    Hackerrank
                   </Button>
                 </a>
               </div>
