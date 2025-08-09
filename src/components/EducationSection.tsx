@@ -7,14 +7,26 @@ const education = [
     degree: "Análise e Desenvolvimento de Sistemas",
     institution: "Unisales - Centro Universitário Salesiano",
     period: "2021 - 2025",
-    type: "education" 
+    type: "education"
   }
 ];
 
 const certifications = [
   {
-    name: "Junior cybersecurity Analystyst Carrer Part",
+    name: "Junior cybersecurity Analystyst",
     issuer: "Cisco",
+    year: "2024",
+    type: "certification"
+  },
+  {
+    name: "IBM Cybersecurity Analyst",
+    issuer: "IBM",
+    year: "2025",
+    type: "certification"
+  },
+  {
+    name: "Google Cloud Cybersecurity",
+    issuer: "Google",
     year: "2025",
     type: "certification"
   },
@@ -44,7 +56,7 @@ const certifications = [
   },
   {
     name: "Network Device Initial Configuration",
-    issuer: "Cisco", 
+    issuer: "Cisco",
     year: "2025",
     type: "certification"
   }
@@ -55,7 +67,7 @@ const EducationSection = () => {
     <section id="education" className="py-20 bg-resume-dark">
       <div className="container mx-auto px-4">
         <h2 className="section-heading text-center">Formação & Certificações</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
           {/* Education */}
           <div className="space-y-6">
@@ -63,7 +75,7 @@ const EducationSection = () => {
               <Book size={22} className="text-resume-cyan mr-2" />
               Formação Acadêmica
             </h3>
-            
+
             <div className="space-y-6">
               {education.map((item, index) => (
                 <Card key={index} className="experience-card animate-slide-up">
@@ -74,14 +86,14 @@ const EducationSection = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Certifications */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-white flex items-center mb-6">
               <Award size={22} className="text-resume-cyan mr-2" />
               Certificações
             </h3>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {certifications.map((cert, index) => (
                 <Card key={index} className="skill-card animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
