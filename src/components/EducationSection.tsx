@@ -3,7 +3,12 @@ import { Card } from "@/components/ui/card";
 import { Book, Award } from "lucide-react";
 
 const education = [
-  {
+    {
+    degree: "Pos Graduação - Defensive Cyber Security",
+    institution: "Fiap - Faculdade de Informática e Administração Paulista",
+    period: "2025 - 2026(previsto)",
+    type: "education"
+  },{
     degree: "Análise e Desenvolvimento de Sistemas",
     institution: "Unisales - Centro Universitário Salesiano",
     period: "2021 - 2025",

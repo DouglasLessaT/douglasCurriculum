@@ -93,7 +93,7 @@ const RadarGraph: React.FC<RadarGraphProps> = ({ skills }) => {
 
   return (
     <div className="mb-8">
-      <Radar data={data} options={options} width={300} height={300} />
+      <Radar data={data} options={options} style={{ width: "100%", maxWidth: 500, height:"auto" }}/>
     </div>
   );
 };

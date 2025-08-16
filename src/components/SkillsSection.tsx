@@ -41,7 +41,7 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
           <div className="space-y-6 animate-slide-up">
             <h3 className="text-2xl font-semibold text-white mb-6">Hard Skills</h3>
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* {HardSkills.map((skill, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between">
