@@ -22,8 +22,7 @@ const experiences = [
     company: "Dalta Industria e comercio de madeiras LTDA",
     location: "Rio Marino, Vila Velha - ES",
     period: "Jun 2019 - Mar 2024",
-    description: "Na Dalta Madeiras, desempenhei papel fundamental na facilitação da integração (JAVA e C#) entre software de inspeção ambiental (DOF/IBAMA) e os sistemas ERP e CRM da empresa. Além disso, gerenciei e desenvolvi regras de negócio para os sistemas da empresa, fui responsável pela infraestrutura de rede, e criei relatórios relacionados à conformidade com RIPD e LGPD."
-  }
+    description: "Atuei no suporte técnico da empresa, sendo responsável pela instalação e configuração de ambientes de trabalho, montagem e manutenção de infraestrutura de hardware, além da automação de processos utilizando Python. Realizei consultas e manipulação de dados em SQL para apoiar as demandas do setor, e ofereci suporte ao uso do pacote Microsoft Office."  }
 ];
 
 const ExperienceSection = () => {
