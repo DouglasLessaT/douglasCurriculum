@@ -23,15 +23,15 @@ type RadarGraphProps = {
 };
 
 const TYPE_COLORS: Record<string, string> = {
-  "Programming Language": "#8B5CF6",
-  "Reporting Tool": "#F472B6",
-  "Operating System": "#F59E42",
-  "Database": "#22D3EE",
-  "Cloud Computing": "#A3E635",
-  "Networking": "#F87171",
-  "Version Control": "#FBBF24",
-  "Containerization": "#38BDF8",
-  "Web Services": "#6366F1",
+  "Programming Language": "#0066FF",
+  "Reporting Tool": "#8B5CF6",
+  "Operating System": "#22D3EE",
+  "Database": "#10B981",
+  "Cloud Computing": "#F59E42",
+  "Networking": "#EF4444",
+  "Version Control": "#EC4899",
+  "Containerization": "#14B8A6",
+  "Web Services": "#F472B6",
 };
 
 const RadarGraph: React.FC<RadarGraphProps> = ({ skills }) => {
@@ -42,10 +42,14 @@ const RadarGraph: React.FC<RadarGraphProps> = ({ skills }) => {
     data: types.map(type => skill.type === type ? skill.level : 0),
     backgroundColor: TYPE_COLORS[skill.type] + "33",
     borderColor: TYPE_COLORS[skill.type],
+    borderWidth: 2,
     pointBackgroundColor: TYPE_COLORS[skill.type],
     pointBorderColor: "#fff",
+    pointBorderWidth: 1,
+    pointRadius: 4,
     pointHoverBackgroundColor: "#fff",
     pointHoverBorderColor: TYPE_COLORS[skill.type],
+    pointHoverRadius: 6,
     fill: true,
   }));
 
@@ -55,45 +59,65 @@ const RadarGraph: React.FC<RadarGraphProps> = ({ skills }) => {
   };
 
   const options = {
-    scales: {
-      r: {
-        angleLines: { display: true },
-        suggestedMin: 0,
-        suggestedMax: 100,
-        pointLabels: { color: "#fff" },
-        grid: { color: "#8B5CF6" },
-        ticks: { color: "#fff", backdropColor: "transparent" },
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        backgroundColor: "rgba(15, 33, 55, 0.95)",
+        titleColor: "#fff",
+        bodyColor: "#9CA3AF",
+        borderColor: "rgba(0, 102, 255, 0.3)",
+        borderWidth: 1,
+        padding: 12,
+        cornerRadius: 8,
       },
     },
-    plugins: {
-      legend: { labels: { color: "#fff" } },
+    scales: {
+      r: {
+        angleLines: { 
+          display: true,
+          color: "rgba(255, 255, 255, 0.08)",
+        },
+        proposedMin: 0,
+        proposedMax: 100,
+        grid: { 
+          color: "rgba(0, 102, 255, 0.15)",
+        },
+        pointLabels: { 
+          color: "#9CA3AF",
+          font: { size: 11 },
+          padding: 15,
+        },
+        ticks: { 
+          color: "#6B7280",
+          backdropColor: "transparent",
+          stepSize: 25,
+          font: { size: 10 },
+        },
+      },
     },
-    responsive: true,
   };
 
-  // Render legenda customizada para as classes
-  const classLegend = (
-    <div className="flex flex-wrap gap-4 justify-center mb-4">
-      {types.map(type => (
-        <div key={type} className="flex items-center gap-2">
-          <span
-            style={{
-              display: "inline-block",
-              width: 24,
-              height: 6,
-              background: TYPE_COLORS[type],
-              borderRadius: 4,
-            }}
-          />
-          <span style={{ color: TYPE_COLORS[type], fontWeight: 600 }}>{type}</span>
-        </div>
-      ))}
-    </div>
-  );
-
   return (
-    <div className="mb-8">
-      <Radar data={data} options={options} style={{ width: "100%", maxWidth: 500, height:"auto" }}/>
+    <div className="w-full max-w-md mx-auto">
+      <div className="relative aspect-square w-full">
+        <Radar data={data} options={options} className="w-full h-full" />
+      </div>
+      
+      <div className="flex flex-wrap gap-3 justify-center mt-4">
+        {types.map(type => (
+          <div key={type} className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/5">
+            <span
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: TYPE_COLORS[type] }}
+            />
+            <span className="text-xs text-gray-400">{type}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
