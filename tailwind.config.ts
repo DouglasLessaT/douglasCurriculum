@@ -67,6 +67,7 @@ export default {
 				'resume-dark': '#121212',
 				'resume-cyan': '#0DE8E8',
 				'resume-gray': '#1E1E1E',
+				'resume-dark2': '#0000007a',
 			},
 			fontFamily: {
 				roboto: ['Roboto', 'sans-serif'],

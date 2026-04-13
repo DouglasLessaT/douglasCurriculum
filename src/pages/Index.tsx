@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import AetherFlowHero from "@/components/ui/aether-flow-hero";
 import Projects from "@/components/Projects";
 import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^=""]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -21,13 +20,12 @@ const Index = () => {
         if (!targetElement) return;
         
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Account for fixed header
+          top: targetElement.offsetTop - 80,
           behavior: 'smooth'
         });
       });
     });
     
-    // Fade-in animation observer
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -52,7 +50,7 @@ const Index = () => {
     <div className="bg-resume-dark min-h-screen">
       <Navbar />
       <main>
-        <HeroSection />
+        <AetherFlowHero />
         <Projects />
         <SkillsSection />
         <ExperienceSection />
