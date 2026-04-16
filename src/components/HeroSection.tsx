@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { renderDonut } from './ui/AsciiArt';
 import { Button } from "@/components/ui/button";
-import { Download, Linkedin, Github} from "lucide-react";
+import { Download, Linkedin, Github, Shield} from "lucide-react";
 import { useIsMobile } from '@/hooks/use-mobile';
 import douglasImg from '../assets/douglas-lessat.jpg';
 
@@ -115,6 +115,13 @@ const HeroSection = () => {
                     className="border-resume-cyan text-resume-cyan hover:bg-resume-cyan/10"
                   >
                     Hackerrank
+                  </Button>
+                </a>
+                <a
+                  href={`${baseRoute}/#/arcsec`}
+                >
+                  <Button className="bg-resume-cyan hover:bg-resume-cyan/80 text-black font-bold">
+                    <Shield size={18} className="mr-2" /> ArcSec
                   </Button>
                 </a>
               </div>

@@ -13,8 +13,8 @@ const AetherFlowHero = () => {
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || isMobile) return;
-    
+    if (!canvas) return;
+
     const ctx = canvas.getContext('2d');
     let animationFrameId;
     let particles = [];
@@ -81,7 +81,7 @@ const AetherFlowHero = () => {
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      init(); 
+      init();
     };
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
@@ -91,21 +91,21 @@ const AetherFlowHero = () => {
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
           let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
-              + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-          
+            + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
+
           if (distance < (canvas.width / 8) * (canvas.height / 8)) {
             opacityValue = 1 - (distance / 25000);
-            
+
             let dx_mouse_a = particles[a].x - mouse.x;
             let dy_mouse_a = particles[a].y - mouse.y;
-            let distance_mouse_a = Math.sqrt(dx_mouse_a*dx_mouse_a + dy_mouse_a*dy_mouse_a);
+            let distance_mouse_a = Math.sqrt(dx_mouse_a * dx_mouse_a + dy_mouse_a * dy_mouse_a);
 
             if (mouse.x && distance_mouse_a < mouse.radius) {
               ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue})`;
             } else {
               ctx.strokeStyle = `rgba(0, 150, 255, ${opacityValue})`;
             }
-            
+
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -126,12 +126,12 @@ const AetherFlowHero = () => {
       }
       connect();
     };
-    
+
     const handleMouseMove = (event) => {
       mouse.x = event.clientX;
       mouse.y = event.clientY;
     };
-    
+
     const handleMouseOut = () => {
       mouse.x = null;
       mouse.y = null;
@@ -170,12 +170,12 @@ const AetherFlowHero = () => {
 
   return (
     <section id="about" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-      {!isMobile && (
+      {(
         <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full"></canvas>
       )}
-      
+
       <div className="absolute inset-0 bg-gradient-to-br from-resume-dark2 via-resume-dark to-resume-surface/50" />
-      
+
       <div className="relative z-10 text-center p-6 w-full max-w-6xl mx-auto">
         <motion.div
           custom={0}
@@ -194,13 +194,13 @@ const AetherFlowHero = () => {
         </motion.div>
 
         <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight px-4 py-[15px] bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight px-2 sm:px-4 py-[10px] sm:py-[15px] bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
             Douglas Lessa
           </h1>
         </motion.div>
 
         <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-resume-blue mb-8">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-resume-blue mb-6 sm:mb-8">
             Desenvolvedor & Analista de Sistemas
           </h2>
         </motion.div>
@@ -210,10 +210,10 @@ const AetherFlowHero = () => {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-2xl mx-auto text-base md:text-lg text-gray-400 mb-10 px-4"
+          className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-400 mb-8 sm:mb-10 px-3 sm:px-4"
         >
-          Especializando-me em Algoritmos, Matemática, Arquitetura e CyberSecurity. 
-          Formado em Análise de Sistemas pela Unisales, com experiência em Java, SQL, 
+          Especializando-me em Algoritmos, Matemática, Arquitetura e CyberSecurity.
+          Formado em Análise de Sistemas pela Unisales, com experiência em Java, SQL,
           JavaScript e TypeScript.
         </motion.p>
 
@@ -222,24 +222,25 @@ const AetherFlowHero = () => {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12"
         >
           <a href={`${baseRoute}/resume.pdf`} download>
-            <button className="px-6 py-3 bg-resume-blue text-white font-semibold rounded-lg shadow-lg hover:bg-resume-blue-light transition-all duration-300 flex items-center gap-2 hover:shadow-glow-blue">
-              <Download className="h-5 w-5" />
-              Download CV
+            <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-resume-blue text-white font-semibold rounded-lg shadow-lg hover:bg-resume-blue-light transition-all duration-300 flex items-center gap-2 hover:shadow-glow-blue text-sm sm:text-base">
+              <Download className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">Download CV</span>
+              <span className="sm:hidden">CV</span>
             </button>
           </a>
           <a href="https://www.linkedin.com/in/douglaslessat/" target="_blank" rel="noopener noreferrer">
-            <button className="px-6 py-3 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
-              <Linkedin className="h-5 w-5" />
-              LinkedIn
+            <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base">
+              <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">LinkedIn</span>
             </button>
           </a>
           <a href="https://github.com/DouglasLessaT" target="_blank" rel="noopener noreferrer">
-            <button className="px-6 py-3 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
-              <Github className="h-5 w-5" />
-              GitHub
+            <button className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/5 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base">
+              <Github className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">GitHub</span>
             </button>
           </a>
         </motion.div>
@@ -249,21 +250,21 @@ const AetherFlowHero = () => {
           variants={fadeUpVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-center justify-center gap-8 md:gap-12"
+          className="flex items-center justify-center gap-4 sm:gap-6 md:gap-10"
         >
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white">4+</div>
-            <div className="text-sm text-gray-500">Anos de experiência</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">2+</div>
+            <div className="text-xs sm:text-sm text-gray-500">Anos</div>
           </div>
-          <div className="w-px h-12 bg-white/10" />
+          <div className="w-px h-10 sm:h-12 bg-white/10" />
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white">10+</div>
-            <div className="text-sm text-gray-500">Projetos</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">10+</div>
+            <div className="text-xs sm:text-sm text-gray-500">Projetos</div>
           </div>
-          <div className="w-px h-12 bg-white/10" />
+          <div className="w-px h-10 sm:h-12 bg-white/10" />
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white">8</div>
-            <div className="text-sm text-gray-500">Certificações</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">8</div>
+            <div className="text-xs sm:text-sm text-gray-500">Certificações</div>
           </div>
         </motion.div>
       </div>

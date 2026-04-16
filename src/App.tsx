@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter,HashRouter, Routes, Route } from "react-router-dom"; // Alterado para HashRouter
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import Index from "./pages/Index";
+import ArcSec from "./pages/ArcSec";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => {
           <ScrollToTop />
           <Routes>
             <Route path={`${baseRoute}/`} element={<Index />} />
+            <Route path={`${baseRoute}/arcsec`} element={<ArcSec />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
